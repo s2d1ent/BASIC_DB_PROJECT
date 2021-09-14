@@ -1,0 +1,19 @@
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.exe
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.deps.json
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.runtimeconfig.json
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.runtimeconfig.dev.json
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.dll
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.pdb
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.csprojAssemblyReference.cache
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\App.g.cs
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql_MarkupCompile.cache
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql_MarkupCompile.lref
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.g.resources
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.AssemblyInfoInputs.cache
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.AssemblyInfo.cs
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.csproj.CoreCompileInputs.cache
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.dll
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.pdb
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.genruntimeconfig.cache

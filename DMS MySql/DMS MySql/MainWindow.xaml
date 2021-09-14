@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DMS_MySql"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DMS MySql" Height="550" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" SizeToContent="Manual" Background="White" Foreground="#FFF2F2F2">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition> 
+        </Grid.ColumnDefinitions>
     </Grid>
 </Window>
