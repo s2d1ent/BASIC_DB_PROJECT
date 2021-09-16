@@ -1,11 +1,11 @@
-﻿<Window x:Class="DMS_MySql.MainWindow"
+﻿<Window x:Class="DMS_MySql.NetworkConnect"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DMS_MySql"
         mc:Ignorable="d"
-        Title="DMS MySql" Height="550" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" SizeToContent="Manual" Background="White" Foreground="#FFF2F2F2" WindowStyle="None">
+        Title="NetworkConnect" Height="550" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" SizeToContent="Manual" Background="White" Foreground="#FFF2F2F2" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -37,16 +37,20 @@
                 <MenuItem Click="Save_config" Header="Save config"></MenuItem>
                 <MenuItem Click="Load_config" Header="Load config"></MenuItem>
                 <MenuItem x:Name="History_connection" Header="History">
-                    
+
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Reference">
                 <MenuItem Header="About"></MenuItem>
             </MenuItem>
         </Menu>
-            <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" FontSize="24 " Text="Select the connection option" Foreground="Black" ></TextBlock>
-        <Button Click="Button_Main_Local" Content="LOCAL" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
-        <Button Click="Button_Main_Network" Content="NETWORK" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
+        <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" FontSize="24 " Text="Enter your MySql data" Foreground="Black" ></TextBlock>
+        <TextBox Text="" Grid.Row="1" Margin="0 60 0 0" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="35" Background="#F2F2F2" BorderThickness="0" FontSize="14" FontFamily="Arial"></TextBox>
+        <TextBox Text="" Grid.Row="2" Margin="0 20 0 0" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="35" Background="#F2F2F2" BorderThickness="0" FontSize="14" FontFamily="Arial"></TextBox>
+        <TextBox Text="" Grid.Row="2" Margin="0 80 0 0" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="35" Background="#F2F2F2" BorderThickness="0" FontSize="14" FontFamily="Arial"></TextBox>
+        <TextBox Text="" Grid.Row="3" Margin="0 40 0 0" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="35" Background="#F2F2F2" BorderThickness="0" FontSize="14" FontFamily="Arial"></TextBox>
+        <TextBox Text="" Grid.Row="3" Margin="0 90 0 0" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="35" Background="#F2F2F2" BorderThickness="0" FontSize="14" FontFamily="Arial"></TextBox>
+        <Button Click="Connect_DB" Content="Connect" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Bottom" Width="100" Height="35" FontSize="14" FontWeight="Bold" Background="#F2F2F2" BorderThickness="0"></Button>
         <TextBlock Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="10" Text="All rights and a little left are reserved by LazyCote©" Foreground="Black" ></TextBlock>
     </Grid>
 </Window>
