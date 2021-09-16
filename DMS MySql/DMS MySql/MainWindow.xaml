@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DMS_MySql"
         mc:Ignorable="d"
-        Title="DMS MySql" Height="550" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" SizeToContent="Manual" Background="White" Foreground="#FFF2F2F2">
+        Title="DMS MySql" Height="550" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" SizeToContent="Manual" Background="White" Foreground="#FFF2F2F2" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -16,12 +16,25 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition> 
+            <ColumnDefinition Width="0*"></ColumnDefinition>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="75*"></ColumnDefinition>
+            <ColumnDefinition Width="75*"></ColumnDefinition>
+            <ColumnDefinition Width="75*"></ColumnDefinition>
+            <ColumnDefinition Width="75*"></ColumnDefinition>
+            <ColumnDefinition Width="75*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <TextBlock x:Name="WindowName" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"> DMS MySql</TextBlock>
+        <Button x:Name="Exit" Width="35" Height="30" Grid.Column="7" Background="White" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0">X</Button>
+        <Menu Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="20" Margin="0,30,0,0" Grid.RowSpan="1" VerticalAlignment="Top" Width="450" Background="White">
+            <MenuItem Header="File">
+                <MenuItem Header="Open"></MenuItem>
+                <MenuItem Header="Save" ></MenuItem>
+                <MenuItem Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit" ></MenuItem>
+            <MenuItem Header="Reference" ></MenuItem>
+        </Menu>
     </Grid>
 </Window>
