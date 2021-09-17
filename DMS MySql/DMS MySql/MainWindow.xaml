@@ -29,15 +29,14 @@
             <MenuItem Header="File">
                 <MenuItem Header="Open"></MenuItem>
                 <MenuItem Header="Save" ></MenuItem>
-                <MenuItem Click="Button_Settings_Open" Header="Settings"></MenuItem>
-                <MenuItem Click="Exit_button" Header="Exit" ></MenuItem>
+                <MenuItem x:Name="Menu_Item_Settings" Header="Settings"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Exit" Header="Exit" ></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit" ></MenuItem>
             <MenuItem Header="Connect">
-                <MenuItem Click="Save_config" Header="Save config"></MenuItem>
-                <MenuItem Click="Load_config" Header="Load config"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Save" Header="Save config"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Load" Header="Load config"></MenuItem>
                 <MenuItem x:Name="History_connection" Header="History">
-                    
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Reference">
@@ -45,8 +44,8 @@
             </MenuItem>
         </Menu>
             <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" FontSize="24 " Text="Select the connection option" Foreground="Black" ></TextBlock>
-        <Button Click="Button_Main_Local" Content="LOCAL" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
-        <Button Click="Button_Main_Network" Content="NETWORK" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
+        <Button x:Name="MainWindow_local_btn" Content="LOCAL" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
+        <Button x:Name="MainWindow_network_btn" Content="NETWORK" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
         <TextBlock Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="10" Text="All rights and a little left are reserved by LazyCote©" Foreground="Black" ></TextBlock>
     </Grid>
 </Window>

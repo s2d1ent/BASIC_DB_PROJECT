@@ -21,34 +21,14 @@ namespace DMS_MySql
         public NetworkConnect()
         {
             InitializeComponent();
+            Button_connect_NetworkConnect.Click += new ButtonsEvent().Connect_DB;
+            // Меню
+            Menu_Item_Settings.Click += new ButtonsEvent().Button_Settings_Open;
+            Menu_Item_Exit.Click += new ButtonsEvent().Exit_button;
+            Menu_Item_Save.Click += new ButtonsEvent().Save_config;
+            Menu_Item_Load.Click += new ButtonsEvent().Load_config;
+            Button_Network_Back.Click += new ButtonsEvent().Button_Network_Back;
         }
-        public void Connect_DB(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        public void Exit_button(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-        public void Save_config(object sender, RoutedEventArgs e)
-        {
-
-        }
-        public void Load_config(object sender, RoutedEventArgs e)
-        {
-
-        }
-        public void Button_Main_Local(object sender, RoutedEventArgs e)
-        {
-
-        }
-        public void Button_Main_Network(object sender, RoutedEventArgs e)
-        {
-
-        }
-        public void Button_Settings_Open(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

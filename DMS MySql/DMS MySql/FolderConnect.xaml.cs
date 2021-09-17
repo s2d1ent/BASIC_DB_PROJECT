@@ -20,10 +20,14 @@ namespace DMS_MySql
         public FolderConnect()
         {
             InitializeComponent();
+            Button_connect_FolderConnect.Click += new ButtonsEvent().Connect_FolderDB;
+            Button_Folder_Back.Click += new ButtonsEvent().Button_Folder_Back;
+            // Меню
+            Menu_Item_Settings.Click += new ButtonsEvent().Button_Settings_Open;
+            Menu_Item_Exit.Click += new ButtonsEvent().Exit_button;
+            Menu_Item_Save.Click += new ButtonsEvent().Save_config;
+            Menu_Item_Load.Click += new ButtonsEvent().Load_config;
         }
-        public void Connect_FolderDB(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

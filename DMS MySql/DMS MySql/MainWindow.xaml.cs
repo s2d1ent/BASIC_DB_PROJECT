@@ -25,32 +25,15 @@ namespace DMS_MySql
         public MainWindow()
         {
             InitializeComponent();
+            MainWindow_local_btn.Click += new ButtonsEvent().Button_Main_Local;
+            MainWindow_network_btn.Click += new ButtonsEvent().Button_Main_Network;
+            // Меню
+            Menu_Item_Settings.Click += new ButtonsEvent().Button_Settings_Open;
+            Menu_Item_Exit.Click += new ButtonsEvent().Exit_button;
+            Menu_Item_Save.Click += new ButtonsEvent().Save_config;
+            Menu_Item_Load.Click += new ButtonsEvent().Load_config;
         }
-        public void Exit_button(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-        public void Save_config(object sender, RoutedEventArgs e)
-        {
-
-        }
-        public void Load_config(object sender, RoutedEventArgs e)
-        {
-
-        }
-        public void Button_Main_Local(object sender, RoutedEventArgs e)
-        {
-
-        }
-        public void Button_Main_Network(object sender, RoutedEventArgs e)
-        {
-            new NetworkConnect().Show();
-            this.Close();
-        }
-        public void Button_Settings_Open(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
    
 }

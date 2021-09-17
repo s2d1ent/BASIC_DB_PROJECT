@@ -26,27 +26,28 @@
             <ColumnDefinition Width="75*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Menu Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="20" Margin="0,0,0,0" Grid.RowSpan="1" VerticalAlignment="Top" Width="450" Background="White">
-            <MenuItem Header="File">
-                <MenuItem Header="Open"></MenuItem>
-                <MenuItem Header="Save" ></MenuItem>
-                <MenuItem Click="Button_Settings_Open" Header="Settings"></MenuItem>
-                <MenuItem Click="Exit_button" Header="Exit" ></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Edit" ></MenuItem>
-            <MenuItem Header="Connect">
-                <MenuItem Click="Save_config" Header="Save config"></MenuItem>
-                <MenuItem Click="Load_config" Header="Load config"></MenuItem>
-                <MenuItem x:Name="History_connection" Header="History">
+        <MenuItem Header="File">
+            <MenuItem Header="Open"></MenuItem>
+            <MenuItem Header="Save" ></MenuItem>
+            <MenuItem x:Name="Menu_Item_Settings" Header="Settings"></MenuItem>
+            <MenuItem x:Name="Menu_Item_Exit" Header="Exit" ></MenuItem>
+        </MenuItem>
+        <MenuItem Header="Edit" ></MenuItem>
+        <MenuItem Header="Connect">
+            <MenuItem x:Name="Menu_Item_Save" Header="Save config"></MenuItem>
+            <MenuItem x:Name="Menu_Item_Load" Header="Load config"></MenuItem>
+            <MenuItem x:Name="History_connection" Header="History">
 
-                </MenuItem>
             </MenuItem>
-            <MenuItem Header="Reference">
-                <MenuItem Header="About"></MenuItem>
-            </MenuItem>
+        </MenuItem>
+        <MenuItem Header="Reference">
+            <MenuItem Header="About"></MenuItem>
+        </MenuItem>
         </Menu>
         <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" FontSize="24 " Text="Enter path to your folder" Foreground="Black" ></TextBlock>
         <TextBox Text="" Grid.Row="1" Margin="0 60 0 0" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="35" Background="#F2F2F2" BorderThickness="0" FontSize="14" FontFamily="Arial"></TextBox>
-        <Button Click="Connect_FolderDB" Content="Connect" Grid.Row="2" Margin="0 0 0 30" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Bottom" Width="100" Height="35" FontSize="14" FontWeight="Bold" Background="#F2F2F2" BorderThickness="0"></Button>
+        <Button x:Name="Button_Folder_Back" Content="←" FontWeight="Bold" Grid.Row="2" Grid.Column="3" Margin="0 0 0 0" HorizontalAlignment="Right" VerticalAlignment="Center" Width="35" Height="35" BorderThickness="0" Background="#f2f2f2"></Button>
+        <Button x:Name="Button_connect_FolderConnect" Content="Connect" Grid.Row="2" Margin="0 0 0 30" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Bottom" Width="100" Height="35" FontSize="14" FontWeight="Bold" Background="#F2F2F2" BorderThickness="0"></Button>
         <TextBlock Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="10" Text="All rights and a little left are reserved by LazyCote©" Foreground="Black" ></TextBlock>
     </Grid>
 </Window>

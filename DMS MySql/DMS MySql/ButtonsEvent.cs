@@ -18,7 +18,49 @@ using System.Windows.Shapes;
 
 namespace DMS_MySql
 {
-    class ButtonsEvent
+    public class ButtonsEvent
     {
+        public void Connect_FolderDB(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void Connect_DB(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void Exit_button(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        public void Save_config(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void Load_config(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void Button_Main_Local(object sender, RoutedEventArgs e)
+        {
+            new FolderConnect().Show();
+            //w.Close();
+        }
+        public void Button_Main_Network(object sender, RoutedEventArgs e)
+        {
+            new NetworkConnect().Show();
+            //w.Close();
+        }
+        public void Button_Settings_Open(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void Button_Network_Back(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void  Button_Folder_Back(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
