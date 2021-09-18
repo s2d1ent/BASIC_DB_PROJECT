@@ -1,0 +1,83 @@
+﻿<Window x:Class="DMS_MySql.Workspace"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DMS_MySql"
+        mc:Ignorable="d"
+        Title="Workspace" Height="720" Width="1280" WindowStyle="ThreeDBorderWindow" Background="#fff">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Grid.ColumnSpan="40" HorizontalAlignment="Left" Height="20" Margin="0,0,0,0" Grid.RowSpan="1" VerticalAlignment="Top" Width="450" Background="White">
+            <MenuItem Header="File">
+                <MenuItem x:Name="Menu_Item_Open_File" Header="Open"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Save_File" Header="Save" ></MenuItem>
+                <MenuItem x:Name="Menu_Item_Settings" Header="Settings"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Exit" Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Window">
+                <MenuItem Header="Thema">
+                    <MenuItem x:Name="Menu_Item_Thema_Classic" Header="Classic"></MenuItem>
+                    <MenuItem x:Name="Menu_Item_Thema_Dark" Header="Dark"></MenuItem>
+                    <MenuItem x:Name="Menu_Item_Thema_Evening" Header="Evening"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Screen">
+                    <MenuItem x:Name="Menu_Item_Screen_Default" Header="Default"></MenuItem>
+                    <MenuItem x:Name="Menu_Item_Screen_Full" Header="Full"></MenuItem>
+                    <MenuItem x:Name="Menu_Item_Screen_Vanish" Header="Vanish"></MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Connect">
+                <MenuItem x:Name="Menu_Item_Save" Header="Save config"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Load" Header="Load config"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Reconnect" Header="Settings"></MenuItem>
+                <MenuItem x:Name="History_connection" Header="History">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Reference">
+                <MenuItem x:Name="Menu_Item_License" Header="License Agreement"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Update" Header="Check Update"></MenuItem>
+                <MenuItem x:Name="Menu_Item_About" Header="About"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBlock x:Name="DataBase_Name" Text="DataBaseName" FontSize="36" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+        <TreeView x:Name="Tree_Tables_DataBase" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3" Background="#f2f2f2" HorizontalAlignment="Left" MaxWidth="250" MinWidth="250"/>
+        <TextBlock x:Name="Total_entries_count" Text="Total entries: " FontWeight="Normal" FontSize="18" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Bottom"></TextBlock>
+        <DataGrid x:Name="DataBase_Table" Grid.Row="2" Grid.Column="5" Grid.RowSpan="4" Grid.ColumnSpan="7" Background="#f2f2f2">
+
+        </DataGrid>
+        <Button x:Name="DataBase_Add" Content="ADD" Grid.Row="6" Grid.Column="5" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="54" Height="25" BorderThickness="0"></Button>
+        <Button x:Name="DataBase_Delete" Content="DELETE" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="76" Height="25" BorderThickness="0"></Button>
+        <Button x:Name="DataBase_Update" Content="UPDATE" Grid.Row="6" Grid.Column="7" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="81" Height="25" BorderThickness="0" ></Button>
+        <DataGrid x:Name="DataBase_Struct" Grid.Row="7" Grid.Column="5" Grid.RowSpan="1" Grid.ColumnSpan="7" Background="#f2f2f2">
+
+        </DataGrid>
+    </Grid>
+</Window>
