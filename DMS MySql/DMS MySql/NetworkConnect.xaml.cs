@@ -27,8 +27,12 @@ namespace DMS_MySql
             Menu_Item_Exit.Click += new ButtonsEvent().Exit_button;
             Menu_Item_Save.Click += new ButtonsEvent().Save_config;
             Menu_Item_Load.Click += new ButtonsEvent().Load_config;
-            Button_Network_Back.Click += new ButtonsEvent().Button_Network_Back;
+            Button_Network_Back.Click += Button_Network_BackE;
         }
-        
+        public void Button_Network_BackE(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Close();
+        }
     }
 }

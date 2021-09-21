@@ -21,13 +21,18 @@ namespace DMS_MySql
         {
             InitializeComponent();
             Button_connect_FolderConnect.Click += new ButtonsEvent().Connect_FolderDB;
-            Button_Folder_Back.Click += new ButtonsEvent().Button_Folder_Back;
+            Button_Folder_Back.Click += Button_Folder_BackE;
             // Меню
             Menu_Item_Settings.Click += new ButtonsEvent().Button_Settings_Open;
             Menu_Item_Exit.Click += new ButtonsEvent().Exit_button;
             Menu_Item_Save.Click += new ButtonsEvent().Save_config;
             Menu_Item_Load.Click += new ButtonsEvent().Load_config;
+
         }
-        
+        public void Button_Folder_BackE(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Close();
+        }
     }
 }
