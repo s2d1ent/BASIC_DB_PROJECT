@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DMS_MySql"
         mc:Ignorable="d"
-        Title="Workspace" Height="720" Width="1280" WindowStyle="ThreeDBorderWindow" Background="#fff">
+        Title="Workspace" Height="720" Width="1280" WindowStyle="ThreeDBorderWindow" Background="#fff" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

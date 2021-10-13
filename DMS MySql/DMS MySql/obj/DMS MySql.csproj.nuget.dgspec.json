@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj": {}
+    "C:\\Users\\User\\Desktop\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj": {}
   },
   "projects": {
-    "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj": {
+    "C:\\Users\\User\\Desktop\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj",
         "projectName": "DMS MySql",
-        "projectPath": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj",
-        "packagesPath": "C:\\Users\\tumen\\.nuget\\packages\\",
-        "outputPath": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\tumen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +43,56 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.26, )"
+            },
+            "MySql.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[8.0.26, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -49,6 +103,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.19, 3.1.19]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -57,7 +117,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

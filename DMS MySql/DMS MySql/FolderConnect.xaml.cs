@@ -25,8 +25,8 @@ namespace DMS_MySql
             // Меню
             Menu_Item_Settings.Click += new ButtonsEvent().Button_Settings_Open;
             Menu_Item_Exit.Click += new ButtonsEvent().Exit_button;
-            Menu_Item_Save.Click += new ButtonsEvent().Save_config;
-            Menu_Item_Load.Click += new ButtonsEvent().Load_config;
+            Menu_Item_Save.Click += new ButtonsEvent().Save_config_open;
+            Menu_Item_Load.Click += new ButtonsEvent().Load_config_open;
 
         }
         public void Button_Folder_BackE(object sender, RoutedEventArgs e)
