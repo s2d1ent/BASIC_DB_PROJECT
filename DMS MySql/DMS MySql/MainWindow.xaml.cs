@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
@@ -25,6 +26,9 @@ namespace DMS_MySql
         public MainWindow()
         {
             InitializeComponent();
+            var PathProject = AppDomain.CurrentDomain.BaseDirectory;
+            new General().FoldersProject(PathProject);
+
             MainWindow_local_btn.Click += Button_Main_Local;
             MainWindow_network_btn.Click += Button_Main_Network;
             // Меню
@@ -37,6 +41,7 @@ namespace DMS_MySql
         {
             new FolderConnect().Show();
             this.Close();
+            
         }
         public void Button_Main_Network(object sender, RoutedEventArgs e)
         {

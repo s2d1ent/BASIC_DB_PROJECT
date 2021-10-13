@@ -80,9 +80,9 @@
         <DataGrid x:Name="DataBase_Table" Grid.Row="2" Grid.Column="5" Grid.RowSpan="4" Grid.ColumnSpan="7" Background="#f2f2f2">
 
         </DataGrid>
-        <Button x:Name="DataBase_Add" Content="ADD" Grid.Row="6" Grid.Column="5" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="54" Height="25" BorderThickness="0"></Button>
-        <Button x:Name="DataBase_Delete" Content="DELETE" Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="2" Margin="80 0 0 0" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="76" Height="25" BorderThickness="0"></Button>
-        <Button x:Name="DataBase_Update" Content="UPDATE" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" Margin="80 0 0 0" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="81" Height="25" BorderThickness="0" ></Button>
+        <Button x:Name="DataBase_Add" Content="ADD" Grid.Row="6" Grid.Column="7" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="54" Height="25" BorderThickness="0"></Button>
+        <Button x:Name="DataBase_Delete" Content="DELETE" Grid.Row="6" Grid.Column="6 " Grid.ColumnSpan="2" Margin="0 0 0 0" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="76" Height="25" BorderThickness="0"></Button>
+        <Button x:Name="DataBase_Update" Content="UPDATE" Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="2" Margin="0 0 0 0" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="81" Height="25" BorderThickness="0" ></Button>
         <DataGrid x:Name="DataBase_Struct" Grid.Row="7" Grid.Column="5" Grid.RowSpan="1" Grid.ColumnSpan="7" Background="#f2f2f2">
 
         </DataGrid>
