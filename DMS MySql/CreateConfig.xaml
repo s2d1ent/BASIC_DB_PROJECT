@@ -1,0 +1,49 @@
+﻿<Window x:Class="DMS_MySql.CreateConfig"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DMS_MySql"
+        mc:Ignorable="d"
+        Title="Create config" Height="550" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" SizeToContent="Manual" Background="White" Foreground="#FFF2F2F2" WindowStyle="SingleBorderWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="File name" FontSize="14" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 0 0 0"></Label>
+        <TextBox x:Name="filename" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#F2F2F2" Width="230" Height="35" BorderThickness="0"></TextBox>
+        <Label Content="Host name " FontSize="14" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom"></Label>
+        <TextBox x:Name="host" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="3" Background="#F2F2F2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" Height="35" BorderThickness="0"></TextBox>
+        <Label Content="Username" FontSize="14" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 0 0 0"></Label>
+        <TextBox x:Name="username" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#F2F2F2" Width="230" Height="35" BorderThickness="0"></TextBox>
+        <Label Content="Port" FontSize="14" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 0 0 0"></Label>
+        <TextBox x:Name="port" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="7" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#f2f2f2" Width="230" Height="35" BorderThickness="0"></TextBox>
+        <Label Content="Password" FontSize="14" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 -20 0 0"></Label>
+        <TextBox x:Name="password" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="9" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#F2F2F2" Width="230" Height="35" BorderThickness="0"></TextBox>
+        <Label Content="Database" FontSize="14" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 -20 0 0"></Label>
+        <TextBox x:Name="database" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="11" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#F2F2F2" Width="230" Height="35" BorderThickness="0"></TextBox>
+        <Button Click="btn_create_config" x:Name="btn__create_config" Content="Create config" Width="100" Height="35" Padding="10 0" Grid.Row="13" VerticalAlignment="Bottom" Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="0"></Button>
+    </Grid>
+</Window>
