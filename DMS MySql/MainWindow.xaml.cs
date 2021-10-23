@@ -27,15 +27,17 @@ namespace DMS_MySql
         {
             InitializeComponent();
             var PathProject = AppDomain.CurrentDomain.BaseDirectory;
+            ButtonsEvent be = new ButtonsEvent();
+            be.win = this;
             new General().FoldersProject(PathProject);
 
             MainWindow_local_btn.Click += Button_Main_Local;
             MainWindow_network_btn.Click += Button_Main_Network;
             // Меню
-            Menu_Item_Settings.Click += new ButtonsEvent().Button_Settings_Open;
-            Menu_Item_Exit.Click += new ButtonsEvent().Exit_button;
-            Menu_Item_Save.Click += new ButtonsEvent().Save_config_open;
-            Menu_Item_Load.Click += new ButtonsEvent().Load_config_open;
+            Menu_Item_Settings.Click += be.Button_Settings_Open;
+            Menu_Item_Exit.Click += be.Exit_button;
+            Menu_Item_Save.Click += be.Save_config_open;
+            Menu_Item_Load.Click += be.Load_config_open;
         }
         public void Button_Main_Local(object sender, RoutedEventArgs e)
         {

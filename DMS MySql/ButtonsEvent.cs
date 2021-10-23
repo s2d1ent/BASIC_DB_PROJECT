@@ -28,14 +28,15 @@ namespace DMS_MySql
     public class ButtonsEvent
     {
         DataBase db = new DataBase();
+        public Window win;
         public void Connect_FolderDB(object sender, RoutedEventArgs e)
         {
 
         }
-        public void Connect_DB(object sender, RoutedEventArgs e)
+       /* public void Connect_DB(object sender, RoutedEventArgs e)
         {
             new Workspace().Show();
-        }
+        }*/
         public void Exit_button(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -52,16 +53,17 @@ namespace DMS_MySql
                 string FilePath = "";
 
                 OpenFileDialog ofp = new OpenFileDialog();
-                ofp.InitialDirectory = PathProject;
-                ofp.Filter = "Text files (*.xml)|*.xml";
+                ofp.InitialDirectory = $"{PathProject}" ;
+                ofp.Filter = "(*.xml)|*.xml";
 
                 if (ofp.ShowDialog() == true)
                     FilePath = ofp.FileName;
                 db.UseConfig(FilePath);
+                win.Close();
             }
             catch (ArgumentException ex)
             {
-
+                //MessageBox.Show($"Message:{ex.Message} \nData: {ex.Data} \nStackTrace{ex.StackTrace} \nHelpLink{ex.HelpLink} \nPlese, copy this message and send on developers email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         public void Button_Settings_Open(object sender, RoutedEventArgs e)

@@ -49,17 +49,17 @@ namespace DMS_MySql
                 }
                 if (host.Text.Length == 0)
                 {
-                    MessageBox.Show("Ошибка: Не введено имя хоста", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error: Host name not entered", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 if (username.Text.Length == 0)
                 {
-                    MessageBox.Show("Ошибка: Не введено имя пользователя базы данных", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error: Database user name not entered", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 if (password.Text.Length == 0)
                 {
-                    MessageBox.Show("Ошибка: Не введен пароль для подключения базы данных", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Error: No password has been entered to connect the database", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 Host = host.Text; Username = username.Text; Password = password.Text;

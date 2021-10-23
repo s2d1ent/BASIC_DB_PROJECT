@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 using System.Collections.Generic;
 using System.Xml;
@@ -14,7 +15,7 @@ using MySql.Data.EntityFramework;
 
 namespace DMS_MySql
 {
-    class DataBase
+    public class DataBase
     {
         public string Host { get; set; }
         public string Username { get; set; }
@@ -22,114 +23,137 @@ namespace DMS_MySql
         public string Password { get; set; }
         public string Database { get; set; }
         public string Table { get; set; }
+        public bool Ssl { get; set; }
+        private string ssl
+        {
+            get
+            {
+                if (!Ssl)
+                    return "None";
+                else
+                    return "Required";
+            }
+            set
+            {
+                value = value;
+            }
+        }
+        private string Charset = "utf8";
 
-        private string Connector = @"";
+        private string Connector = $"";
         private string Query;
         private MySqlConnection Connection;
         private MySqlDataAdapter Client;
 
-        public DataBase()
-        {
-            Connection = new MySqlConnection(Connector);
-            Client = new MySqlDataAdapter(Query, Connection);
-        }
+        public DataBase() {}
         public DataBase(string host, string port, string username, string password)
         {
-            new DataBase();
             this.Host = host;
             this.Port = port;
             this.Username = username;
             this.Password = password;
-            this.Connector = $@"server={Host};userid={Username};password={Password}";
+            Connector = $"server={Host};user={Username};password={Password};port={Port};charset={Charset};SslMode={ssl}";
         }
         public DataBase(string host, string port, string username, string password, string database)
         {
-            new DataBase();
             this.Host = host;
             this.Port = port;
             this.Username = username;
             this.Password = password;
             this.Database = database;
-            this.Connector = $@"server={Host};userid={Username};password={Password};database={Database}";
+            Connector = $"server={Host};user={Username};password={Password};port={Port};database={Database};charset={Charset};SslMode={ssl}";
         }
         ~DataBase()
         {
-            GC.Collect(2,GCCollectionMode.Optimized);
+            GC.Collect(2, GCCollectionMode.Optimized);
         }
         public void Connect()
         {
             if(Connection.State == System.Data.ConnectionState.Closed)
             {
-                Connection.OpenAsync();
+                Connection.Open();
             }
         }
         public void Disconnect()
         {
             if (Connection.State == System.Data.ConnectionState.Open)
             {
-                Connection.CloseAsync();
+                Connection.Close();
             }
         }
         public System.Data.ConnectionState GetStatus()
         {
             return System.Data.ConnectionState.Open;
         }
-        public void GetConnectionData()
+        public void GetConfig()
         {
-            var data = $"Host: {Host}" + "\n" + $"Port: {Port}" + "\n" + $"Username: {Username}" + "\n" + $"Database: {Database}" + "\n";
-            MessageBox.Show(data, "Data connection", MessageBoxButton.OK);
+            
         }
-        public void UseConfig(string host, string port, string username, string password)
+        public DataSet GetTables()
         {
-            this.Host = host;
-            this.Port = port;
-            this.Username = username;
-            this.Password = password;
-            this.Connector = $@"server={Host};userid={Username};password={Password}";
+            DataSet Result = new DataSet();
+            Connection = new MySqlConnection(Connector);
+            Query = "show databases";
+            Client = new MySqlDataAdapter(Query, Connection);
+            Client.Fill(Result);
+
+            return Result;
         }
-        // TODO доделать использование конфига
-        // разобраться с подключением
+        public void UseConfig(string path, Window w)
+        {
+            UseConfig(path);
+            w.Close();
+        }
         public void UseConfig(string path)
         {
             string Path = path;
-            Host = (string)XDocument.Parse(File.ReadAllText(Path)).Element("config").Element("host");
-            Port = (string)XDocument.Parse(File.ReadAllText(Path)).Element("config").Element("port");
-            Username = (string)XDocument.Parse(File.ReadAllText(Path)).Element("config").Element("username");
-            Password = (string)XDocument.Parse(File.ReadAllText(Path)).Element("config").Element("psswrd");
-            Database = (string)XDocument.Parse(File.ReadAllText(Path)).Element("config").Element("database");
+            var config = XDocument.Parse(File.ReadAllText(Path)).Element("config");
+            Host = (string)config.Element("host");
+            Port = (string)config.Element("port");
+            Username = (string)config.Element("username");
+            Password = (string)config.Element("psswrd");
+            Database = (string)config.Element("database");
 
-            Connector = $@"server={Host};user={Username};port={Port};password={Password};database={Database};charset=utf8";
-            Connection = new MySqlConnection(Connector);
+            Connector = $@"server={Host};user={Username};password={Password};port={Port};database={Database};charset={Charset};SslMode={ssl}";
             bool status = TryConnect();
             if (status)
             {
-                MessageBox.Show("Успешно: подключение установленно", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show("Successful: connection is established", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                Workspace wk = new Workspace();
+                /*if(Database.Length == 0)
+                    wk.db = new DataBase(Host, Port, Username, Password);
+                else
+                    wk.db = new DataBase(Host, Port, Username, Password, Database);*/
+                MessageBox.Show($"Host - {this.Host} : DB - {this.Database} : Password - {this.Password} : User - {this.Username}", "Db", MessageBoxButton.OK);
+                wk.db = new DataBase(Host, Port, Username, Password);
+                wk.Show();
             }
             else
-                MessageBox.Show("Ошибка: Отсутствует соединение с сервером", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error: There is no connection to the server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         public bool TryConnect()
         {
             try
             {
-                Connection.OpenAsync();
+                Connection = new MySqlConnection(Connector);
+                Query = "show databases";
+                Client = new MySqlDataAdapter(Query, Connection);
+                Connect();
                 if (Connection.State == System.Data.ConnectionState.Open)
                 {
-                    //Query = "show tables";
-                    //Client = new MySqlDataAdapter(Query, Connection);
-                    MessageBox.Show($"Успешно: Соединение было намеренно разорвано {Connection.State}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //MessageBox.Show($"Успешно: Соединение было намеренно разорвано {Connection.State}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
                     Connection.CloseAsync();
                     return true;    
                 }
                 else if (Connection.State == System.Data.ConnectionState.Broken){
                     Connection.CloseAsync();
-                    MessageBox.Show($"Ошибка: Соединение было намеренно разорвано {Connection.State}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    //MessageBox.Show($"Ошибка: Соединение было намеренно разорвано {Connection.State}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
                 else
                 {
                     Connection.CloseAsync();
-                    MessageBox.Show($"Ошибка: Соединение закрыто {Connection.State}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    //MessageBox.Show($"Ошибка: Соединение закрыто {Connection.State}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
                     

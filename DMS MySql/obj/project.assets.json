@@ -2136,11 +2136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj",
+      "projectUniqueName": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql.csproj",
       "projectName": "DMS MySql",
-      "projectPath": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj",
+      "projectPath": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql.csproj",
       "packagesPath": "C:\\Users\\tumen\\.nuget\\packages\\",
-      "outputPath": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\obj\\",
+      "outputPath": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tumen\\AppData\\Roaming\\NuGet\\NuGet.Config",

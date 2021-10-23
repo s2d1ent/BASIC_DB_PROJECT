@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7sTY9L1EY7he9lWhUmLHUIGP9PbRFFkaCpcTS45gtzJr20XqmWa5UsilWtv0oxKZqczaq/RxLHG1YO5ikr2+ww==",
+  "dgSpecHash": "37XlCYnIBJCZbL5AjJqjp1MIZJ0szeXSRK/pMCUsvXV5T7WKgOLYU8R0WfgF0rLdaGGexLEOtswy5OQ01NsbYg==",
   "success": true,
-  "projectFilePath": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql\\DMS MySql.csproj",
+  "projectFilePath": "D:\\Моё портфолио\\BASIC_DB_PROJECT\\DMS MySql\\DMS MySql.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tumen\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\tumen\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

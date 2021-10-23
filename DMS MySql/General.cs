@@ -26,7 +26,7 @@ namespace DMS_MySql
         {
 
         }
-        public void SaveConnectedXml(string filename ,string host , string username , string password)
+        /*public void SaveConnectedXml(string filename, string host, string username, string password)
         {
             var PathProject = AppDomain.CurrentDomain.BaseDirectory;
             var ConfDirectory = new DirectoryInfo($"{PathProject}/data/conf");
@@ -41,9 +41,9 @@ namespace DMS_MySql
                 XElement configsElement = new XElement("config", hostElement, usernameElement, passwordElement);
                 XDocument config = new XDocument(configsElement);
 
-                File.WriteAllText($"{ConfDirectory}/{filename}.conf.xml",config.ToString());
+                File.WriteAllText($"{ConfDirectory}/{filename}.conf.xml", config.ToString());
             }
-        }
+        }*/
         public async Task<bool> SaveConnectedXml(string filename, string host, string port, string username, string password, string database)
         {
             var PathProject = AppDomain.CurrentDomain.BaseDirectory;
@@ -68,10 +68,6 @@ namespace DMS_MySql
                 return true;
             else
                 return false;
-        }
-        public void LoadConnectedXml()
-        {
-
         }
     }
 }

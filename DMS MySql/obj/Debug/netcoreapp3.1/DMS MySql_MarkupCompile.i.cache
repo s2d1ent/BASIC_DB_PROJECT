@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\obj\Debug\netcoreapp3.1\
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\
 DMS_MySql
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\DMS MySql\App.xaml
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\App.xaml
 5573319866
 2-1299208386
 121683156830
 21998129185
 CreateConfig.xaml;FolderConnect.xaml;MainWindow.xaml;NetworkConnect.xaml;Workspace.xaml;
 
-True
+False
 
