@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -17,7 +17,8 @@ namespace DMS_MySql
     /// </summary>
     public partial class NetworkConnect : Window
     {
-
+        DataBase db = new DataBase();
+        Workspace wk = new Workspace();
         public NetworkConnect()
         {
             InitializeComponent();
@@ -39,7 +40,14 @@ namespace DMS_MySql
         }
         private void Connect(object sender, RoutedEventArgs e)
         {
-
+            db = new DataBase(Host.Text, Port.Text, Username.Text, Password.Text, Database.Text);
+            bool try_connect = db.TryConnect();
+            if (try_connect)
+            {
+                wk.db = db;
+                wk.Show();
+                this.Close();
+            }
         }
     }
 }

@@ -68,7 +68,9 @@
             </MenuItem>
         </Menu>
         <TextBlock x:Name="DataBase_Name" Text="DataBaseName" FontSize="36" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
-        <TreeView x:Name="Tree_Tables_DataBase" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3" Background="#f2f2f2" HorizontalAlignment="Left" MaxWidth="250" MinWidth="250"/>
+        <TreeView x:Name="Tree_Tables_DataBase" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3" Background="#f2f2f2" HorizontalAlignment="Left" MaxWidth="250" MinWidth="250">
+            <TreeView/>
+        </TreeView>
         <TextBlock x:Name="Status" Text="Status: " Grid.Row="6" Grid.Column="1" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="Status_Answer" Text="Done" Grid.Row="6" Grid.Column="2" FontSize="16" FontWeight="Medium" Foreground="Green" VerticalAlignment="Center"></TextBlock>
         <TextBlock x:Name="Response" Text="Response: " Grid.Row="7" Grid.Column="1" FontSize="16" FontWeight="Bold" VerticalAlignment="Top"></TextBlock>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -35,7 +36,14 @@ namespace DMS_MySql
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //MessageBox.Show($"{db.Host} - {db.Username} - {db.Password} - {db.Port} - {db.Database}", "WS");
+            List<string> databases = db.GetDatabases();
+            for (var i = 0; i < databases.Count; i++)
+                Tree_Tables_DataBase.Items.Add(databases[i]);
+            for(var i = 0; i < databases.Count; i++)
+            {
 
+            }
         }
     }
 }

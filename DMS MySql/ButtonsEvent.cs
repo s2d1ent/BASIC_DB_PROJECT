@@ -58,8 +58,9 @@ namespace DMS_MySql
 
                 if (ofp.ShowDialog() == true)
                     FilePath = ofp.FileName;
-                db.UseConfig(FilePath);
-                win.Close();
+                bool use_conf = db.UseConfig(FilePath);
+                if (use_conf)
+                    win.Close();
             }
             catch (ArgumentException ex)
             {

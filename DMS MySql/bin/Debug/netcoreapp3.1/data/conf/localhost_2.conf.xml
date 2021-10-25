@@ -1,7 +1,7 @@
 <config>
-  <host>192.168.0.108</host>
+  <host>127.0.0.1</host>
   <username>root</username>
   <port></port>
   <psswrd></psswrd>
-  <database></database>
+  <database>lcbotshop</database>
 </config>

@@ -197,3 +197,70 @@ D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\
 D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.dll
 D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.pdb
 D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.genruntimeconfig.cache
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.pdb
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.exe
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.deps.json
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.runtimeconfig.json
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\DMS MySql.pdb
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\EntityFramework.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\MySql.Data.EntityFramework.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\CreateConfig.g.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\FolderConnect.g.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\NetworkConnect.g.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\Workspace.g.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql_Content.g.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql_MarkupCompile.cache
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql_MarkupCompile.lref
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\CreateConfig.baml
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\FolderConnect.baml
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\NetworkConnect.baml
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\Workspace.baml
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.g.resources
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.AssemblyInfo.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.csproj.CopyComplete
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.genruntimeconfig.cache

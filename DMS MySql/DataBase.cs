@@ -12,6 +12,7 @@ using MySql.Data.Types;
 using MySql.Data.Common;
 using MySql.Data.MySqlClient;
 using MySql.Data.EntityFramework;
+using System.Windows.Controls;
 
 namespace DMS_MySql
 {
@@ -23,7 +24,7 @@ namespace DMS_MySql
         public string Password { get; set; }
         public string Database { get; set; }
         public string Table { get; set; }
-        public bool Ssl { get; set; }
+        public bool Ssl = false;
         private string ssl
         {
             get
@@ -44,6 +45,7 @@ namespace DMS_MySql
         private string Query;
         private MySqlConnection Connection;
         private MySqlDataAdapter Client;
+        private MySqlCommand cmd;
 
         public DataBase() {}
         public DataBase(string host, string port, string username, string password)
@@ -89,13 +91,46 @@ namespace DMS_MySql
         {
             
         }
-        public DataSet GetTables()
+        public List<string> GetTables()
         {
-            DataSet Result = new DataSet();
+            List<string> Result = new List<string>();
+            Connection = new MySqlConnection(Connector);
+            Query = "show tables";
+            Connection.Open();
+            cmd = new MySqlCommand(Query, Connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+                Result.Add(reader[0].ToString());
+            Connection.Close();
+
+            return Result;
+        }
+        public List<string> GetTables(string database)
+        {
+            List<string> Result = new List<string>();
+            Connector = $"server={Host};user={Username};password={Password};port={Port};database={database};charset={Charset};SslMode={ssl}";
+            Connection = new MySqlConnection(Connector);
+            Query = "show tables";
+            Connection.Open();
+            cmd = new MySqlCommand(Query, Connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+                Result.Add(reader[0].ToString());
+            Connection.Close();
+
+            return Result;
+        }
+        public List<string> GetDatabases()
+        {
+            List<string> Result = new List<string>();
             Connection = new MySqlConnection(Connector);
             Query = "show databases";
-            Client = new MySqlDataAdapter(Query, Connection);
-            Client.Fill(Result);
+            Connection.Open();
+            cmd = new MySqlCommand(Query, Connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+                Result.Add(reader[0].ToString());
+            Connection.Close();
 
             return Result;
         }
@@ -104,7 +139,7 @@ namespace DMS_MySql
             UseConfig(path);
             w.Close();
         }
-        public void UseConfig(string path)
+        public bool UseConfig(string path)
         {
             string Path = path;
             var config = XDocument.Parse(File.ReadAllText(Path)).Element("config");
@@ -115,28 +150,27 @@ namespace DMS_MySql
             Database = (string)config.Element("database");
 
             Connector = $@"server={Host};user={Username};password={Password};port={Port};database={Database};charset={Charset};SslMode={ssl}";
-            bool status = TryConnect();
-            if (status)
+            bool try_connect = TryConnect();
+            if (try_connect)
             {
                 //MessageBox.Show("Successful: connection is established", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
                 Workspace wk = new Workspace();
-                /*if(Database.Length == 0)
-                    wk.db = new DataBase(Host, Port, Username, Password);
-                else
-                    wk.db = new DataBase(Host, Port, Username, Password, Database);*/
-                MessageBox.Show($"Host - {this.Host} : DB - {this.Database} : Password - {this.Password} : User - {this.Username}", "Db", MessageBoxButton.OK);
-                wk.db = new DataBase(Host, Port, Username, Password);
+                wk.db = new DataBase(Host, Port, Username, Password, Database);
                 wk.Show();
+                return true;
             }
             else
-                MessageBox.Show("Error: There is no connection to the server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                //MessageBox.Show("Error: There is no connection to the server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
         }
         public bool TryConnect()
         {
             try
             {
                 Connection = new MySqlConnection(Connector);
-                Query = "show databases";
+                Query = "SHOW VARIABLES";
                 Client = new MySqlDataAdapter(Query, Connection);
                 Connect();
                 if (Connection.State == System.Data.ConnectionState.Open)
@@ -147,13 +181,13 @@ namespace DMS_MySql
                 }
                 else if (Connection.State == System.Data.ConnectionState.Broken){
                     Connection.CloseAsync();
-                    //MessageBox.Show($"Ошибка: Соединение было намеренно разорвано {Connection.State}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Error: The connection was deliberately broken", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
                 else
                 {
                     Connection.CloseAsync();
-                    //MessageBox.Show($"Ошибка: Соединение закрыто {Connection.State}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Error: Connection closed", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
                     

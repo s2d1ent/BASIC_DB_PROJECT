@@ -44,8 +44,8 @@
             </MenuItem>
         </Menu>
             <TextBlock  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" FontSize="24 " Text="Select the connection option" Foreground="Black" ></TextBlock>
-        <Button x:Name="MainWindow_local_btn" Content="LOCAL" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
-        <Button x:Name="MainWindow_network_btn" Content="NETWORK" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
+        <Button x:Name="MainWindow_local_btn" Content="PostgreSql" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
+        <Button x:Name="MainWindow_network_btn" Content="MySql" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Width="200" Height="75" FontSize="26" FontWeight="Medium" Background="#F2F2F2" BorderThickness="0"></Button>
         <TextBlock Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="10" Text="All rights and a little left are reserved by LazyCote©" Foreground="Black" ></TextBlock>
     </Grid>
 </Window>
