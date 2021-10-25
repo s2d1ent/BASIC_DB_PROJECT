@@ -13,6 +13,7 @@ using MySql.Data.Common;
 using MySql.Data.MySqlClient;
 using MySql.Data.EntityFramework;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace DMS_MySql
 {
@@ -91,6 +92,22 @@ namespace DMS_MySql
         {
             
         }
+        public void GetTable(object sender, MouseButtonEventArgs e)
+        {
+            //DataTable table = this.GetTable((string)sender);
+            MessageBox.Show($"{sender}");
+        }
+        public DataTable GetTable(string table_name)
+        {
+            DataTable Result = new DataTable();
+
+            Connection = new MySqlConnection(Connector);
+            Query = $"SELECT * FROM {Database}.{table_name}";
+            Client = new MySqlDataAdapter(Query, Connection);
+            Client.Fill(Result);
+
+            return Result;
+        }
         public List<string> GetTables()
         {
             List<string> Result = new List<string>();
@@ -108,16 +125,24 @@ namespace DMS_MySql
         public List<string> GetTables(string database)
         {
             List<string> Result = new List<string>();
-            Connector = $"server={Host};user={Username};password={Password};port={Port};database={database};charset={Charset};SslMode={ssl}";
-            Connection = new MySqlConnection(Connector);
-            Query = "show tables";
-            Connection.Open();
-            cmd = new MySqlCommand(Query, Connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-                Result.Add(reader[0].ToString());
-            Connection.Close();
-
+            try
+            {
+                Connector = $"server={Host};user={Username};password={Password};port={Port};database={database};charset={Charset};SslMode={ssl}";
+                Connection = new MySqlConnection(Connector);
+                Query = "show tables";
+                Connection.Open();
+                cmd = new MySqlCommand(Query, Connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                    Result.Add(reader[0].ToString());
+                Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Task.Run(() => {
+                    MessageBox.Show($"Message:{ex.Message} \nData: {ex.Data} \nStackTrace{ex.StackTrace} \nHelpLink{ex.HelpLink} \nPlese, copy this message and send on developers email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                });
+            }
             return Result;
         }
         public List<string> GetDatabases()
@@ -133,11 +158,6 @@ namespace DMS_MySql
             Connection.Close();
 
             return Result;
-        }
-        public void UseConfig(string path, Window w)
-        {
-            UseConfig(path);
-            w.Close();
         }
         public bool UseConfig(string path)
         {
