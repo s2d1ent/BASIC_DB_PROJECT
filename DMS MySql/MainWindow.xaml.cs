@@ -40,6 +40,7 @@ namespace DMS_MySql
             Menu_Item_Save.Click += be.Save_config_open;
             Menu_Item_Load.Click += be.Load_config_open;
 
+            Menu_Item_License.Click += ge.Open_License;
             Menu_Item_About.Click += ge.OpenAbout;
         }
         public void Button_Main_Local(object sender, RoutedEventArgs e)

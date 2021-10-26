@@ -1,9 +1,7 @@
 {
-    "data" : {
-        "version" : "1.0.0.0",
-        "developers" : "s2d1ent",
-        "site" : "https://vk.com/s2d1entstr",
+        "Version" : "1.0.0.0",
+        "Developers" : "s2d1ent",
+        "WebSite" : "https://vk.com/s2d1entstr",
         "bit_system" : "64 bit",
-        "license" : "/data/license.html"
-    }
+        "License_Agreement" : "/data/license.html"
 }

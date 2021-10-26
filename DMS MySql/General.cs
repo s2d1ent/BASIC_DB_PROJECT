@@ -74,5 +74,19 @@ namespace DMS_MySql
             about ab = new about();
             ab.Show();
         }
+        public void Open_License(object sender, MouseEventArgs e)
+        {
+            var myProcess = new System.Diagnostics.Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = $"{AppDomain.CurrentDomain.BaseDirectory}/data/license.html";
+            myProcess.Start();
+        }
+        public void Open_License(object sender, RoutedEventArgs e)
+        {
+            var myProcess = new System.Diagnostics.Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = $"{AppDomain.CurrentDomain.BaseDirectory}/data/license.html";
+            myProcess.Start();
+        }
     }
 }

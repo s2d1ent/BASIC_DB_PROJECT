@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
@@ -18,23 +19,35 @@ namespace DMS_MySql
     /// </summary>
     public partial class about : Window
     {
-        public string version { get; set; }
-        public string developers { get; set; }
-        public string website { get; set; }
-        public string license_agreement { get; set; }
+        
         public about()
         {
+            General ge = new General();
             InitializeComponent();
             Exit.Click += ExitBtn;
-            GetInfo();
-        }
-        void GetInfo()
-        {
-            JsonSerializer json 
+
+            WebSite.MouseLeftButtonDown += Open_site;
+            License_Agreement.MouseLeftButtonDown += ge.Open_License;
+
+            string Json = File.ReadAllText($"{AppDomain.CurrentDomain.BaseDirectory}/data/about.json");
+            About json = JsonSerializer.Deserialize<About>(Json);
+            Version.Content = json.Version;
+            Developers.Content = "s2d1ent";
+            WebSite.Text = @"https://vk.com/s2d1entstr";
+            License_Agreement.Content = "Click for read";
         }
         public void ExitBtn(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+        void Open_site(object sender, MouseEventArgs e)
+        {
+            var myProcess = new System.Diagnostics.Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = "https://vk.com/s2d1entstr";
+            myProcess.Start();
+        }
+        
     }
+    
 }
