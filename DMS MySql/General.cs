@@ -3,10 +3,10 @@ using System.IO;
 using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Linq;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Net;
-using System.Net.Sockets;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace DMS_MySql
 {
@@ -68,6 +68,11 @@ namespace DMS_MySql
                 return true;
             else
                 return false;
+        }
+        public void OpenAbout(object sender, RoutedEventArgs e)
+        {
+            about ab = new about();
+            ab.Show();
         }
     }
 }

@@ -40,7 +40,9 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Reference">
-                <MenuItem Header="About"></MenuItem>
+                <MenuItem x:Name="Menu_Item_License" Header="License Agreement"></MenuItem>
+                <MenuItem x:Name="Menu_Item_Update" Header="Check Update"></MenuItem>
+                <MenuItem x:Name="Menu_Item_About" Header="About"></MenuItem>
             </MenuItem>
         </Menu>
             <TextBlock  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" FontSize="24 " Text="Select the connection option" Foreground="Black" ></TextBlock>
