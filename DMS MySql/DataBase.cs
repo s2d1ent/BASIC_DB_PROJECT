@@ -48,6 +48,8 @@ namespace DMS_MySql
         private MySqlDataAdapter Client;
         private MySqlCommand cmd;
 
+        private History history = new History();
+
         public DataBase() {}
         public DataBase(string host, string port, string username, string password)
         {
@@ -92,19 +94,34 @@ namespace DMS_MySql
         {
             
         }
-        public void GetTable(object sender, MouseButtonEventArgs e)
-        {
-            //DataTable table = this.GetTable((string)sender);
-            MessageBox.Show($"{sender}");
-        }
         public DataTable GetTable(string table_name)
         {
             DataTable Result = new DataTable();
 
             Connection = new MySqlConnection(Connector);
+            //MessageBox.Show($"{Database} - {table_name}");
             Query = $"SELECT * FROM {Database}.{table_name}";
             Client = new MySqlDataAdapter(Query, Connection);
             Client.Fill(Result);
+
+
+            /*Task.Run(() =>
+            {
+                List<string> a = new List<string>();
+                string res = "";
+                if(!File.Exists(@"C:\Users\tumen\Desktop\table.txt"))
+                    File.Create(@"C:\Users\tumen\Desktop\table.txt");
+                foreach (DataColumn elem in Result.Columns)
+                {
+                    var col = new DataGridTextColumn();
+                    col.Header = elem.ColumnName;
+                    col.Binding = new System.Windows.Data.Binding(elem.ColumnName);
+                    a.Add(col.Header.ToString());
+                }
+                foreach (var i in a)
+                    res += i;
+                    File.WriteAllText(@"C:\Users\tumen\Desktop\table.txt", res);
+            });*/
 
             return Result;
         }
@@ -174,6 +191,9 @@ namespace DMS_MySql
             if (try_connect)
             {
                 //MessageBox.Show("Successful: connection is established", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                Task.Run(()=> {
+                    history.AddConnection(this);
+                });
                 Workspace wk = new Workspace();
                 wk.db = new DataBase(Host, Port, Username, Password, Database);
                 wk.Show();

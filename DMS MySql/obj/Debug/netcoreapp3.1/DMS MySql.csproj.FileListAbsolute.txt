@@ -266,3 +266,5 @@ C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS My
 C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DMS MySql.genruntimeconfig.cache
 C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\about.g.cs
 C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\about.baml
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\about.g.cs
+D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\about.baml

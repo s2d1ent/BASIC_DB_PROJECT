@@ -2,42 +2,70 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Text;
-using System.Text.Json;
+using System.Xml;
+using System.Xml.Linq;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace DMS_MySql
 {
     public class History
     {
-        public List<DMS_MySql.DataBase> List = new List<DMS_MySql.DataBase>();
+        public Window win;
+        public MenuItem history;
+        public List<DataBase> DataBases = new List<DataBase>();
+        public List<MenuItem> menuItems = new List<MenuItem>();
+        string domain = AppDomain.CurrentDomain.BaseDirectory;
         public History()
         {
 
         }
         ~History()
         {
+            GC.Collect(2, GCCollectionMode.Forced);
+        }
+        public void ToListFromConfig()
+        {
+            string xml = $"{domain}/data/history.xml";
+            var doc = XDocument.Parse(File.ReadAllText(xml));
+            foreach(XElement elem in doc.Element("history").Elements("Database"))
+            {
+                string name = (string)elem.Element("Name"),
+                    host = (string)elem.Element("Host"),
+                    username = (string)elem.Element("Username"),
+                    port = (string)elem.Element("Port"),
+                    password = (string)elem.Element("Password"),
+                    database = (string)elem.Element("Database");
+                MenuItem item = new MenuItem();
+                if (name.Length == 0)
+                    name = $"{host} - {username}";
+                item.Header = name;
+                DataBases.Add(new DataBase(host, port, username, password, database));
+                menuItems.Add(item);
+            }
+        }
+        public void UpdateFromList()
+        {
 
         }
-        public void UpdateList()
+        public void UpdateConfig()
         {
-            if (!File.Exists($"{AppDomain.CurrentDomain.BaseDirectory}/data/history.json"))
+
+        }
+        public void AddConnection(DataBase db)
+        {
+            List<DataBase> time = new List<DataBase>();
+            time.Add(db);
+            for(var i = 0; i < DataBases.Count; i++)
+                time.Add(DataBases[i]);
+            DataBases.Clear();
+            for (var i = 0; i < time.Count; i++)
             {
-                string json = "";
-                DataBase db = new DataBase();
-                Stack<string> name = new Stack<string>();
-                name.Push("One"); name.Push("Two"); name.Push("Three"); name.Push("Four"); name.Push("Five");
-                for(var i = 0; i < name.Count; i++)
-                {
-                    db_local.Name = name.Pop();
-                    string Json = "";
-                    Json += JsonSerializer.Serialize<DataBase>(db);
-                }
-            }
-            else 
-            {
-                string json = File.ReadAllText($"{AppDomain.CurrentDomain.BaseDirectory}/data/history.json");
-            }
-            
+                DataBases.Add(time[i]);
+                if (i == 4)
+                    break;
+            }           
         }
     }
 }
