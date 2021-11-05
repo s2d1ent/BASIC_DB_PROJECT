@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DMS_MySql"
         mc:Ignorable="d"
-        Title="Workspace" Height="720" Width="1280" WindowStyle="ThreeDBorderWindow" Background="#fff" Loaded="Window_Loaded">
+        Title="Workspace" Height="720" Width="1280" WindowStyle="ThreeDBorderWindow" Background="#fff" Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -84,6 +84,6 @@
         <Button x:Name="DataBase_Add" Content="ADD" Grid.Row="6" Grid.Column="7" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="54" Height="25" BorderThickness="0"></Button>
         <Button x:Name="DataBase_Delete" Content="DELETE" Grid.Row="6" Grid.Column="6 " Grid.ColumnSpan="2" Margin="0 0 0 0" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="76" Height="25" BorderThickness="0"></Button>
         <Button x:Name="DataBase_Update" Content="UPDATE" Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="2" Margin="0 0 0 0" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="81" Height="25" BorderThickness="0" ></Button>
-        <DataGrid x:Name="DataBase_Struct" Grid.Row="7" Grid.Column="5" Grid.RowSpan="1" Height="25" Grid.ColumnSpan="7" VerticalAlignment="Top" Background="#f2f2f2"/>
+        <DataGrid x:Name="DataBase_Struct" Grid.Row="7" Grid.Column="5" Grid.RowSpan="1" Height="40" Grid.ColumnSpan="7" VerticalAlignment="Top" Background="#f2f2f2"/>
     </Grid>
 </Window>

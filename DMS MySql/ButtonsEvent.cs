@@ -51,6 +51,9 @@ namespace DMS_MySql
             {
                 var PathProject = AppDomain.CurrentDomain.BaseDirectory;
                 string FilePath = "";
+                bool use_conf = false;
+                if (!Directory.Exists($"{PathProject}/data/conf"))
+                    Directory.CreateDirectory($"{PathProject}/data/conf");
 
                 OpenFileDialog ofp = new OpenFileDialog();
                 ofp.InitialDirectory = $"{PathProject}" ;
@@ -58,7 +61,7 @@ namespace DMS_MySql
 
                 if (ofp.ShowDialog() == true)
                     FilePath = ofp.FileName;
-                bool use_conf = db.UseConfig(FilePath);
+                use_conf = db.UseConfig(FilePath);
                 if (use_conf)
                     win.Close();
             }

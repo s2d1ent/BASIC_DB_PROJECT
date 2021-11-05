@@ -1,10 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Xml;
-using System.Xml.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,25 +17,24 @@ namespace DMS_MySql
     /// </summary>
     public partial class MainWindow : Window
     {
+        General ge = new General();
+        ButtonsEvent be = new ButtonsEvent();
+        History history = new History();
         public MainWindow()
         {
             InitializeComponent();
             var PathProject = AppDomain.CurrentDomain.BaseDirectory;
-            General ge = new General();
-            ButtonsEvent be = new ButtonsEvent();
             be.win = this;
             ge.FoldersProject(PathProject);
 
-            MainWindow_local_btn.Click += Button_Main_Local;
-            MainWindow_network_btn.Click += Button_Main_Network;
             // Меню
             Menu_Item_Settings.Click += be.Button_Settings_Open;
             Menu_Item_Exit.Click += be.Exit_button;
             Menu_Item_Save.Click += be.Save_config_open;
             Menu_Item_Load.Click += be.Load_config_open;
 
-            Menu_Item_License.Click += ge.Open_License;
-            Menu_Item_About.Click += ge.OpenAbout;
+            MainWindow_local_btn.Click += Button_Main_Local;
+            MainWindow_network_btn.Click += Button_Main_Network;
         }
         public void Button_Main_Local(object sender, RoutedEventArgs e)
         {
@@ -53,6 +46,13 @@ namespace DMS_MySql
         {
             new NetworkConnect().Show();
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            /*var menu = ge.MenuLoad();
+            foreach (MenuItem elem in menu)
+                MenuWindow.Items.Add(elem);*/
         }
     }
    

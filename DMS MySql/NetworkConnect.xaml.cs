@@ -19,18 +19,13 @@ namespace DMS_MySql
     {
         DataBase db = new DataBase();
         Workspace wk = new Workspace();
+        ButtonsEvent be = new ButtonsEvent();
+        General ge = new General();
         public NetworkConnect()
         {
             InitializeComponent();
-            ButtonsEvent be = new ButtonsEvent();
             be.win = this;
-
             Button_connect_NetworkConnect.Click += Connect;
-            // Меню
-            Menu_Item_Settings.Click += be.Button_Settings_Open;
-            Menu_Item_Exit.Click += be.Exit_button;
-            Menu_Item_Save.Click += be.Save_config_open;
-            Menu_Item_Load.Click += be.Load_config_open;
             Button_Network_Back.Click += Button_Network_BackE;
         }
         public void Button_Network_BackE(object sender, RoutedEventArgs e)
@@ -48,6 +43,12 @@ namespace DMS_MySql
                 wk.Show();
                 this.Close();
             }
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var menu = ge.MenuLoad();
+            foreach (MenuItem elem in menu)
+                MenuWindow.Items.Add(elem);
         }
     }
 }
