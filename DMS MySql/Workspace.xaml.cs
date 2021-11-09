@@ -88,75 +88,52 @@ namespace DMS_MySql
                 });
             }
         }
+        //TODO
+        async void ChekingTable()
+        {
+            DataTable tb = new DataTable();
+            foreach (DataColumn elem in Tree_Tables_DataBase.Items)
+            {
+                tb.Columns.Add(elem.ColumnName);
+            }
+            foreach (DataRow elem in Tree_Tables_DataBase.Items)
+            {
+                tb.Rows.Add(elem);
+            }
+        }
         void TableOut(object sender, RoutedEventArgs e)
         {
             string parent = ((TreeViewItem)sender).Parent.ToString();
-            string str = parent.Replace("System.Windows.Controls.TreeViewItem", "")
-                            .Replace("Header:", "");
-            int count = str.IndexOf("Items.Count:");
-            string neW = str.Substring(count);
-            str = str.Replace(neW, "").Replace(" ", "");
-            db.Database = str;
-            db.Table = sender.ToString().Replace("System.Windows.Controls.TreeViewItem", "")
+            db.Database = parent.Replace("System.Windows.Controls.TreeViewItem", "")
+                            .Replace("Header:", "")
+                            .Replace(parent.Substring(parent.IndexOf("Items.Count:")), "")
+                            .Replace(" ", "");
+            db.Table = sender.ToString()
+                                .Replace("System.Windows.Controls.TreeViewItem", "")
                                 .Replace("Header:", "")
                                 .Replace("Items.Count:0", "")
                                 .Replace(" ", "");
-            DataTable table = db.GetTable(db.Table); 
-            DataBase_Table.Columns.Clear();
-            DataBase_Table.Items.Clear();
-            DataBase_Struct.Columns.Clear();
-            foreach (DataColumn elem in table.Columns)
-            {
-                var col = new DataGridTextColumn();
-                col.Header = elem.ColumnName;
-                col.Binding = new Binding(elem.ColumnName);
-                DataBase_Table.Columns.Add(col);
-            }
-            foreach (DataColumn elem in table.Columns)
-            {
-                var col = new DataGridTextColumn();
-                col.Header = elem.ColumnName;
-                col.Binding = new Binding(elem.ColumnName);
-                DataBase_Struct.Columns.Add(col);
-            }
-            foreach (DataRow elem in table.Rows)
-                DataBase_Table.Items.Add(table.DefaultView[table.Rows.IndexOf(elem)]);
+            FillTables(db.GetTable(db.Table));
         }
+        // TODO async
         async void TableOutAsync(object sender, RoutedEventArgs e)
         {
             try
             {
-                string parent = ((TreeViewItem)sender).Parent.ToString();
-                string str = parent.Replace("System.Windows.Controls.TreeViewItem", "")
-                                .Replace("Header:", "");
-                int count = str.IndexOf("Items.Count:");
-                string neW = str.Substring(count);
-                str = str.Replace(neW, "").Replace(" ", "");
-                db.Database = str;
-                db.Table = sender.ToString().Replace("System.Windows.Controls.TreeViewItem", "")
+                await Task.Run(async()=> {
+                    string parent = ((TreeViewItem)sender).Parent.ToString();
+                    db.Database = parent.Replace("System.Windows.Controls.TreeViewItem", "")
                                     .Replace("Header:", "")
-                                    .Replace("Items.Count:0", "")
+                                    .Replace(parent.Substring(parent.IndexOf("Items.Count:")), "")
                                     .Replace(" ", "");
+                    db.Table = sender.ToString()
+                                        .Replace("System.Windows.Controls.TreeViewItem", "")
+                                        .Replace("Header:", "")
+                                        .Replace("Items.Count:0", "")
+                                        .Replace(" ", "");
+                });
                 DataTable table = await db.GetTableAsync(db.Table);
-                DataBase_Table.Columns.Clear();
-                DataBase_Table.Items.Clear();
-                DataBase_Struct.Columns.Clear();
-                foreach (DataColumn elem in table.Columns)
-                {
-                    var col = new DataGridTextColumn();
-                    col.Header = elem.ColumnName;
-                    col.Binding = new Binding(elem.ColumnName);
-                    DataBase_Table.Columns.Add(col);
-                }
-                foreach (DataColumn elem in table.Columns)
-                {
-                    var col = new DataGridTextColumn();
-                    col.Header = elem.ColumnName;
-                    col.Binding = new Binding(elem.ColumnName);
-                    DataBase_Struct.Columns.Add(col);
-                }
-                foreach (DataRow elem in table.Rows)
-                    DataBase_Table.Items.Add(table.DefaultView[table.Rows.IndexOf(elem)]);
+                FillTables(table);
             }
             catch (Exception ex) 
             {
@@ -164,6 +141,37 @@ namespace DMS_MySql
                     MessageBox.Show($"Message:{ex.Message} \nData: {ex.Data} \nStackTrace{ex.StackTrace} \nHelpLink{ex.HelpLink} \nPlese, copy this message and send on developers email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 });
             }
+        }
+        private void FillTables(DataTable dt)
+        {
+            DataBase_Table.Columns.Clear();
+            DataBase_Table.Items.Clear();
+            DataBase_Struct.Columns.Clear();
+            foreach (DataColumn elem in dt.Columns)
+            {
+                var col = new DataGridTextColumn();
+                col.Header = elem.ColumnName;
+                col.Binding = new Binding(elem.ColumnName);
+                DataBase_Table.Columns.Add(col);
+            }
+            foreach (DataColumn elem in dt.Columns)
+            {
+                var col = new DataGridTextColumn();
+                col.Header = elem.ColumnName;
+                col.Binding = new Binding(elem.ColumnName);
+                DataBase_Struct.Columns.Add(col);
+            }
+            foreach (DataRow elem in dt.Rows)
+                DataBase_Table.Items.Add(dt.DefaultView[dt.Rows.IndexOf(elem)]);
+           /* for(var i = 0; i < DataBase_Table.Items.Count; i++)
+            {
+                DataBase_Table.
+            }*/
+
+        }
+        void test(object sender, EventArgs e)
+        {
+            //MessageBox.Show($"{sender}");
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

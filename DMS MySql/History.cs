@@ -48,7 +48,7 @@ namespace DMS_MySql
         public void UpdateConfig()
         {
 
-            string name, host, username, port, password, database;
+            string name;
             string xml = $"{domain}/data/history.xml";
             var doc = XDocument.Parse(File.ReadAllText(xml));
             XDocument doc_new = new XDocument();

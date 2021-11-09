@@ -51,6 +51,8 @@ namespace DMS_MySql
 
         private History history = new History();
 
+        public DataTable PhysTable;
+
         public DataBase() {}
         public DataBase(string host, string port, string username, string password)
         {
@@ -95,6 +97,13 @@ namespace DMS_MySql
         {
             
         }
+        public bool UpdateChecking(DataTable tb)
+        {
+            if (tb != this.PhysTable)
+                return false;
+            else
+                return true;
+        }
         public DataTable GetTable(string table_name)
         {
             DataTable Result = new DataTable();
@@ -102,6 +111,7 @@ namespace DMS_MySql
             Query = $"SELECT * FROM {Database}.{table_name}";
             Client = new MySqlDataAdapter(Query, Connection);
             Client.Fill(Result);
+            PhysTable = Result.Clone();
             return Result;
         }
         async public Task<DataTable> GetTableAsync(string table_name)

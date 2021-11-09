@@ -25,7 +25,7 @@ namespace DMS_MySql
             InitializeComponent();
             
         }
-        public async void btn_create_config(object sender, RoutedEventArgs e)
+        public void btn_create_config(object sender, RoutedEventArgs e)
         {
             try
             {

@@ -129,7 +129,7 @@ namespace DMS_MySql
                 XElement configsElement = new XElement("config", hostElement, usernameElement, portElement, passwordElement, databaseElement);
                 XDocument config = new XDocument(configsElement);
 
-                Task.Run(()=> File.WriteAllText($"{ConfDirectory}/{filename}.conf.xml", config.ToString())).Wait();
+                await Task.Run(()=> File.WriteAllText($"{ConfDirectory}/{filename}.conf.xml", config.ToString()));
                 //File.WriteAllText($"{ConfDirectory}/{filename}.conf.xml", config.ToString());
             }
             if (new FileInfo($"{PathProject}/data/conf/{filename}.conf.xml").Exists)
