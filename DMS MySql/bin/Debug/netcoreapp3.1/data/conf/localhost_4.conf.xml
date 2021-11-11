@@ -1,0 +1,7 @@
+<config>
+  <host>127.0.0.1</host>
+  <username>root</username>
+  <port></port>
+  <psswrd></psswrd>
+  <database></database>
+</config>

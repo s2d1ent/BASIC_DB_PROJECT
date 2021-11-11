@@ -87,7 +87,7 @@ namespace DMS_MySql
                         break;
                 }
             });
-            Task.Run(()=> {
+            /*Task.Run(()=> {
                 List<MenuItem> menu = new List<MenuItem>();
                 MenuItem item = new MenuItem();
                 item.Header = $"{db.Host} - {db.Username}";
@@ -101,7 +101,7 @@ namespace DMS_MySql
                     if (i == 4)
                         break;
                 }
-            });
+            });*/
         }
     }
 }

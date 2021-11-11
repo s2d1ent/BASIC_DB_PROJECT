@@ -41,6 +41,9 @@ namespace DMS_MySql
 
             // Кнопки управления
             DataBase_Update.Click += Update;
+            create_database.Click += CreateDB;
+
+            DataBase_Table.CellEditEnding += CelLEdit;
 
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -67,6 +70,7 @@ namespace DMS_MySql
                 }
                 else
                 {
+                    DataBase_Name.Text = db.Database;
                     TreeViewItem tree_database = new TreeViewItem();
                     tree_database.Header = db.Database;
                     Tree_Tables_DataBase.Items.Add(tree_database);
@@ -114,6 +118,7 @@ namespace DMS_MySql
                                 .Replace("Items.Count:0", "")
                                 .Replace(" ", "");
             FillTables(db.GetTable(db.Table));
+            DataBase_Name.Text = db.Database;
         }
         // TODO async
         async void TableOutAsync(object sender, RoutedEventArgs e)
@@ -134,12 +139,29 @@ namespace DMS_MySql
                 });
                 DataTable table = await db.GetTableAsync(db.Table);
                 FillTables(table);
+                DataBase_Name.Text = db.Database;
             }
             catch (Exception ex) 
             {
                 Task.Run(() => {
                     MessageBox.Show($"Message:{ex.Message} \nData: {ex.Data} \nStackTrace{ex.StackTrace} \nHelpLink{ex.HelpLink} \nPlese, copy this message and send on developers email", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 });
+            }
+        }
+        void CelLEdit(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+                var column = e.Column as DataGridBoundColumn;
+                if (column != null)
+                {
+                    var bindingPath = (column.Binding as Binding).Path.Path;
+                    if (bindingPath == "Col2")
+                    {
+                        int rowIndex = e.Row.GetIndex();
+                        var el = e.EditingElement as TextBox;
+                    }
+                }
             }
         }
         private void FillTables(DataTable dt)
@@ -168,6 +190,16 @@ namespace DMS_MySql
                 DataBase_Table.
             }*/
 
+        }
+        void CreateDB(object sender, EventArgs e)
+        {
+            CreateDB cdb = new CreateDB();
+            cdb.db = db;
+            cdb.Show();
+        }
+        async void CreateDBAsync(object sender, EventArgs e)
+        {
+            await Task.Run(()=> { CreateDB(sender, e); });
         }
         void test(object sender, EventArgs e)
         {

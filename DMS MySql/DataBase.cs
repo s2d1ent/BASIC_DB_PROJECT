@@ -106,12 +106,17 @@ namespace DMS_MySql
         }
         public DataTable GetTable(string table_name)
         {
+            //MySqlException
             DataTable Result = new DataTable();
-            Connection = new MySqlConnection(Connector);
-            Query = $"SELECT * FROM {Database}.{table_name}";
-            Client = new MySqlDataAdapter(Query, Connection);
-            Client.Fill(Result);
-            PhysTable = Result.Clone();
+            try
+            {
+                Connection = new MySqlConnection(Connector);
+                Query = $"SELECT * FROM {Database}.{table_name}";
+                Client = new MySqlDataAdapter(Query, Connection);
+                Client.Fill(Result);
+                PhysTable = Result.Clone();
+            }
+            catch(MySqlException ex) { }
             return Result;
         }
         async public Task<DataTable> GetTableAsync(string table_name)
@@ -188,6 +193,23 @@ namespace DMS_MySql
             List<string> result = new List<string>();
             await Task.Run(()=> { result = GetDatabases(); });
             return result;
+        }
+        public bool CreateDataBase(string name)
+        {
+            bool result = false;
+            MessageBox.Show($"name: {name} - host: {this.Host} user: {this.Username}");
+            if(name.Length == 0)
+            {
+                return false;
+            }
+            Query = $@"CREATE DATABASE `{name}`";
+            Connection = new MySqlConnection(Connector);
+            Client = new MySqlDataAdapter(Query, Connection);
+
+            Query = @$"IF EXISTS(show tables {name})";
+            cmd = new MySqlCommand(Query, Connection);
+            //Console.WriteLine(cmd.ExecuteScalar());
+            return false;
         }
         public bool UseConfig(string path)
         {
