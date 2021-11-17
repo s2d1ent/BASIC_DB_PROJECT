@@ -270,3 +270,5 @@ D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\
 D:\Моё портфолио\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\about.baml
 C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\CreateDB.g.cs
 C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\CreateDB.baml
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DeleteDB.g.cs
+C:\Users\Admin\Desktop\BASIC_DB_PROJECT\DMS MySql\obj\Debug\netcoreapp3.1\DeleteDB.baml

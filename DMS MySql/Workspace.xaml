@@ -58,8 +58,6 @@
                 <MenuItem x:Name="Menu_Item_Save" Header="Save config"></MenuItem>
                 <MenuItem x:Name="Menu_Item_Load" Header="Load config"></MenuItem>
                 <MenuItem x:Name="Menu_Item_Reconnect" Header="Settings"></MenuItem>
-                <MenuItem x:Name="History_connection" Header="History">
-                </MenuItem>
             </MenuItem>
             <MenuItem Header="Reference">
                 <MenuItem x:Name="Menu_Item_License" Header="License Agreement"></MenuItem>
@@ -70,11 +68,11 @@
         <TextBlock x:Name="DataBase_Name" Text="DataBaseName" FontSize="36" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
         <TreeView x:Name="Tree_Tables_DataBase" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3" Background="#f2f2f2" HorizontalAlignment="Left" MaxWidth="250" MinWidth="250">
         </TreeView>
-        <Button x:Name="create_database" Content="add" Width="30" Height="30" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left"/>
-        <Button x:Name="delete_database" Content="del" Width="30" Height="30" Grid.Row="6" Grid.Column="1" HorizontalAlignment="right"/>
-        
+        <Button x:Name="create_database" Content="add" Width="30" Height="30" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" BorderThickness="0"/>
+        <Button x:Name="delete_database" Content="del" Width="30" Height="30" Grid.Row="6" Grid.Column="1" HorizontalAlignment="right" BorderThickness="0"/>
+        <Button x:Name="update_database" Content="load" Width="30" Height="30" Grid.Row="6" Grid.Column="2" HorizontalAlignment="center" BorderThickness="0"/>
         <TextBlock x:Name="Total_entries_count" Text="Total entries: " FontWeight="Normal" FontSize="18" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Bottom"></TextBlock>
-        <DataGrid x:Name="DataBase_Table" Grid.Row="2" Grid.Column="5" Grid.RowSpan="4" Grid.ColumnSpan="7" Background="#f2f2f2">
+        <DataGrid x:Name="DataBase_Table" DataGrid.IsReadOnly="True"  Grid.Row="2" Grid.Column="5" Grid.RowSpan="4" Grid.ColumnSpan="7" Background="#f2f2f2">
             
         </DataGrid>
         <Button x:Name="DataBase_Add" Content="ADD" Grid.Row="6" Grid.Column="7" HorizontalAlignment="Left" Background="#f2f2f2" FontWeight="Bold" FontSize="16" Width="54" Height="25" BorderThickness="0"></Button>

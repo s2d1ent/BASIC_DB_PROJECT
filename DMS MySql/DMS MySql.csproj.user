@@ -16,6 +16,9 @@
     <Compile Update="CreateDB.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DeleteDB.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="NetworkConnect.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CreateDB.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeleteDB.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

@@ -194,22 +194,35 @@ namespace DMS_MySql
             await Task.Run(()=> { result = GetDatabases(); });
             return result;
         }
-        public bool CreateDataBase(string name)
+        public void CreateDataBase(string name)
         {
-            bool result = false;
-            MessageBox.Show($"name: {name} - host: {this.Host} user: {this.Username}");
             if(name.Length == 0)
             {
-                return false;
+                return;
             }
-            Query = $@"CREATE DATABASE `{name}`";
             Connection = new MySqlConnection(Connector);
-            Client = new MySqlDataAdapter(Query, Connection);
-
-            Query = @$"IF EXISTS(show tables {name})";
+            Connect();
+            Query = $"CREATE DATABASE `{name}`";
             cmd = new MySqlCommand(Query, Connection);
+            var a = cmd.ExecuteScalar();
+            Connection.Close();
             //Console.WriteLine(cmd.ExecuteScalar());
-            return false;
+            //return false;
+        }
+        public void DeleteDataBase(string name)
+        {
+            if (name.Length == 0)
+            {
+                return;
+            }
+            Connection = new MySqlConnection(Connector);
+            Connect();
+            Query = $"DROP DATABASE `{name}`";
+            cmd = new MySqlCommand(Query, Connection);
+            var a = cmd.ExecuteScalar();
+            Connection.Close();
+            //Console.WriteLine(cmd.ExecuteScalar());
+            //return false;
         }
         public bool UseConfig(string path)
         {

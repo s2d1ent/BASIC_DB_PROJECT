@@ -33,10 +33,6 @@ namespace DMS_MySql
         {
 
         }
-       /* public void Connect_DB(object sender, RoutedEventArgs e)
-        {
-            new Workspace().Show();
-        }*/
         public void Exit_button(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
